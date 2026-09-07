@@ -29,3 +29,31 @@
     if (event.key === "Escape") setOpen(false);
   });
 })();
+
+
+/* Collaborator modal dialogs */
+(function () {
+  var links = document.querySelectorAll("[data-collab-modal]");
+  if (!links.length) return;
+
+  function openModal(id) {
+    var dialog = document.getElementById(id);
+    if (!dialog || typeof dialog.showModal !== "function") return;
+    if (!dialog.open) dialog.showModal();
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var id = link.getAttribute("data-collab-modal");
+      if (!id) return;
+      event.preventDefault();
+      openModal(id);
+    });
+  });
+
+  document.querySelectorAll("dialog.collab-dialog").forEach(function (dialog) {
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+})();
