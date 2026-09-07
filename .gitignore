@@ -1,0 +1,4 @@
+﻿*.bak*
+index.html.bak*
+.DS_Store
+Thumbs.db
