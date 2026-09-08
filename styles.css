@@ -827,3 +827,16 @@ footer a { text-decoration: none; }
   .collab-dialog { width: 96vw; }
   .team-list { margin-left: 0.9rem; }
 }
+
+
+.collab-table-scroll {
+  max-height: min(55vh, 520px);
+  overflow: auto;
+}
+.collab-dialog {
+  max-height: min(90vh, 860px);
+}
+.collab-dialog-inner {
+  max-height: min(90vh, 860px);
+  overflow: auto;
+}
